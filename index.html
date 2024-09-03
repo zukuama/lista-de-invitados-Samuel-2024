@@ -11,6 +11,59 @@
 
 <body
     style="background-image: url('source/img/fondoAnimales.webp'); background-size: cover; background-position: center;">
+
+    <!-- Slider -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="source/img/sam1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam4.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam5.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam6.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam8.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam9.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam10.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam11.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam12.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam13.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam14.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="source/img/sam7.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <h1 class="slider-title">SAMUEL ALEJANDRO</h1>
+    </div>
+    <!-- Fin del Slider -->
+
     <div class="container mt-4">
         <h1 class="text-center">Lista de Invitados</h1>
 
@@ -30,6 +83,34 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fecha objetivo (aquí puedes cambiar la fecha a la que desees)
+            const targetDate = new Date('2024-11-24'); // Ejemplo: 24 de noviembre de 2024
+
+            // Función para calcular días restantes
+            function calculateDaysRemaining() {
+                const currentDate = new Date();
+                const timeDifference = targetDate - currentDate;
+                const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+                return daysRemaining;
+            }
+
+            // Actualizar el contenido del h1
+            function updateTitle() {
+                const daysRemaining = calculateDaysRemaining();
+                const titleElement = document.querySelector('.slider-title');
+                titleElement.textContent = `SAMUEL - Faltan ${daysRemaining} días`;
+            }
+
+            // Actualizar el título al cargar la página
+            updateTitle();
+
+            // Actualizar el título cada día (86400000 ms = 1 día)
+            setInterval(updateTitle, 86400000);
+        });
+
+    </script>
 </body>
 
 </html>
